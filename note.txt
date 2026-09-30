@@ -1,0 +1,110 @@
+Assignment Number 4
+
+class Car {}:
+            Defines a new class named Car following Object-Oriented Programming (OOP) principles.
+
+
+
+private speed: number;
+                    Declares a property speed with the type number.   
+                    The private modifier ensures that speed can only be accessed or changed within the Car class.   
+
+
+
+constructor(public brand: string):
+                                Defines the constructor method, which executes automatically when creating a new class instance.
+                                The parameter public brand: string uses TypeScript parameter property shorthand, which automatically creates a public property named brand of type string on the instance and assigns the constructor argument to it
+
+
+
+this.speed = 0;:
+                Initializes the private speed property to 0 whenever a new Car instance is created.
+                Closes the constructor function.                          
+
+
+
+
+public accelerate(amount: number): void:
+                                        Declares a public method named accelerate that accepts a parameter amount of type number.
+                                        : void indicates that this method performs actions but does not return a value.
+                                        The public modifier makes this method accessible outside the class.
+
+
+
+
+this.speed += amount;:
+                     Increases the current value of the private speed property by amount.
+
+
+
+
+console.log("Accelerating " + this.brand + " by " + amount + " km/h.");
+                                                                       Prints a message to the console combining strings with this.brand and amount. 
+                                                                       Closes the accelerate method.
+
+
+
+
+public getSpeed(): number {
+    return this.speed;
+  }:
+                          Declares a public getter method named getSpeed that returns a number.                                                                     
+                         Provides controlled, read-only external access to the private speed property.
+
+
+
+
+private checkEngine(): void {
+    console.log("Engine diagnostic check complete.");
+  }
+                                                    Declares a private helper method named checkEngine that returns void.
+                                                    Because it is private, it can only be called internally within the Car class methods and not on class instances externally.
+                                                    Closes the Car class.
+
+
+
+
+const myCar = new Car("Toyota");
+                               Instantiates a new Car object named myCar with "Toyota" passed as the brand.
+
+
+
+
+myCar.accelerate(50);
+                     Calls the public accelerate method on myCar with 50, increasing speed from 0 to 50.
+
+
+
+
+console.log(myCar.getSpeed()); 
+                             Calls myCar.getSpeed(), which returns 50, and logs it to the console.                                                      
+
+                             
+
+
+Assignment Number 5
+
+
+
+let vehicleId: string | number;
+                              Declares a variable named vehicleId using a union type (|), allowing it to accept values that are either a string or a number.
+
+
+
+ vehicleId = "VIN-98765";
+                          Assigns a string value "VIN-98765" to vehicleId.                           
+
+
+
+console.log("Vehicle ID (String): " + vehicleId);                        
+                                                Prints the current string value of vehicleId to the console.
+
+
+
+ vehicleId = 98765;
+                     Reassigns a numeric value 98765 to vehicleId, demonstrating that the union type permits type switching while maintaining static type safety.                               
+
+
+
+console.log("Vehicle ID (Number): " + vehicleId);
+                                                 Prints the updated numeric value of vehicleId to the console.                                 
